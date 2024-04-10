@@ -159,7 +159,7 @@ function parOuImpar(){
     }
 
     document.getElementById("resultado").innerHTML = res1 + "\n" + res2;
-}
+}//fim do metodo
 
 //faça um programa que peça ao usuario um numero e 
 //imprima se é positivo, negativo ou zero
@@ -190,9 +190,9 @@ function verificar(){
     }
         
     document.getElementById("resultado").innerHTML = "O primeiro número é: " + res + "\nO segundo número é: " + res2;
-}
+}//fim do metodo
 
-//Faça um programa que imprima os números de 1 a 10. 
+//1. Faça um programa que imprima os números de 1 a 10. 
 
 function contarDez(){
     var res = "Números de 1 a 10:";
@@ -202,9 +202,9 @@ function contarDez(){
     }
 
     document.getElementById("resultado").innerHTML = "\n" + res;
-}
+}//fim do metodo
 
-//Faça um programa que imprima os números pares de 1 a 20
+//2. Faça um programa que imprima os números pares de 1 a 20
 function contarPares(){
 var res = "Pares de 1 a 20:";
 
@@ -215,9 +215,9 @@ var res = "Pares de 1 a 20:";
     }
 
     document.getElementById("resultado").innerHTML = "\n" + res;
-}
+}//fim do metodo
 
-//Faça um programa que calcule a soma dos números de 1 a 100
+//3. Faça um programa que calcule a soma dos números de 1 a 100
 function somarCem(){
     var soma = 0;
 
@@ -226,6 +226,220 @@ function somarCem(){
     }
 
     document.getElementById("resultado").innerHTML = soma;
-}
+}//fim do metodo
 
+//4. Faça um programa que imprima os múltiplos de 5 de 1 a 50
+function multiCinco(){
+    var res = "Multiplos de 5";
+
+    for(i = 1; i <= 50; i++){
+        if(i % 5 == 0){
+            res += "\n" + i;
+        }
+    }
+
+    document.getElementById("resultado").innerHTML = "\n" + res;
+}//fim do metodo
+
+//5. Faça um programa que peça ao usuário um número e imprima os números 
+//de 1 até esse número. 
+function contar(){
+    var x;
+
+    x = parseInt(document.getElementById("textNum").value);
+
+    var res = "Contando de 1 até: " + x;
+
+    for(i = 1; i <= x; i++){
+        res += "\n" + i;
+    }
+
+    document.getElementById("resultado").innerHTML = "\n" + res;
+}//fim do metodo
+
+//6. Faça um programa que peça ao usuário um número e imprima a soma dos 
+//números de 1 até esse número. 
+
+function somar(){
+    var x;
+
+    x = parseInt(document.getElementById("textNum").value);
+
+    var soma = 0;
+
+    for(i = 1; i <= x; i++){
+        soma += i;
+    }
+
+    document.getElementById("resultado").innerHTML = "A soma de 1 até " + x + " é igual a: " + soma;
+
+}//fim do metodo
+
+//7. Faça um programa que imprima os números primos de 1 a 20
+
+function primos(){
+    var res = "0\n1\n2\n3\n5" ;
+
+    for(i = 2; i <= 20; i++){
+        if((i % 2 != 0) && (i % 3 != 0) && (i % 5 != 0)){
+            res += "\n" + i;
+        }
+    }
+
+    document.getElementById("resultado").innerHTML = "\n" + res;
+}//fim do metodo
+
+//8. Faça um programa que peça ao usuário um número e verifique se é primo// ERRO
+
+function verifPrimo(){
+    var numero = parseInt(document.getElementById("textNum").value);
+    var divisores = 0;
+   
+    for(var i = 1; i <= numero; i++) {
+        if (numero % i == 0) {
+            divisores++;
+        }
+    }    
+   
+    if (divisores == 2) {
+        document.getElementById('resultado').innerHTML = 'É primo';
+    } else {
+        document.getElementById('resultado').innerHTML = 'Não é primo';
+    }
+}//fim do metodo
+
+//9. Faça um programa que calcule o fatorial de um número. 
+
+function fatorial(){
+    var fatorial = parseInt(document.getElementById('textNum').value);
+    var resultado = fatorial;
+    var primeiroMultipicador = fatorial - 1;
+ 
+    //Validação
+    if (isNaN(fatorial)) {
+        return 'Não existe fatorial de um texto';
+    }
+    
+    if (!Number.isInteger(fatorial) || fatorial < 0) {
+        return 'Não existe fatorial de um número não natural';
+    }
+    
+    if (fatorial === 0 || fatorial === 1) {
+        return 1;
+    }
+    
+    //Cálculo
+    for(var i = primeiroMultipicador; i > 1; i--){
+        resultado *= i;
+    }
+    document.getElementById("resultado").innerHTML = "O fatorial resultado fatorial de " + fatorial + " é: " + resultado;
+}//fim do método
+
+
+//10. Faça um programa que imprima a sequência de Fibonacci até o décimo 
+//termo. 
+
+function fibonacci(){
+    var fibonacci = [];
+    fibonacci[0] = 1;
+    fibonacci[1] = 1;
+ 
+    for(i = 2; i < 10; i++){
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2]
+    }
+ 
+    document.getElementById("resultado").innerHTML = fibonacci;
+}//fim do metodo
+
+//11. Faça um programa que peça ao usuário um número e imprima os números 
+//pares e ímpares de 1 até esse número.
+function parImpar(){
+    var num;
+    var numPar = [];
+    var numImpar = [];
+    var posicaoPar = 0;
+    var posicaoImpar = 0;
+ 
+    num = parseInt(document.getElementById("textNum").value)
+
+   
+    for(i = 1; i < num + 1; i++){
+        if(i == 1){
+            numImpar[0] = i;
+            posicaoImpar = 1;
+        }
+        else if(i % 2 == 0){
+            numPar[posicaoPar] = i;
+            posicaoPar += 1;
+        }
+        else{
+            numImpar[posicaoImpar] = i;
+            posicaoImpar += 1;
+        }
+    }
+ 
+    if(num < 1){
+        res = "Informe um número maior que 1"
+        document.getElementById("resultado").innerHTML = res
+    }
+    else{
+        document.getElementById("resultado").innerHTML = "Número Pares: \n" + numPar + "\nNúmero Ímpares: \n" + numImpar;
+    }
+    
+}//Fim do método
+
+//12. Faça um programa que peça ao usuário um número e imprima os números 
+//primos de 1 até esse número. 
+
+function mostrarPrimos(){
+    var num;
+    var primo = [];
+    var posicao = 0;
+     
+    num = parseInt(document.getElementById("textNum").value)
+     
+    for(i = 1; i < num + 1; i++){
+        if(i == 2 || i == 3 || i == 5 || i == 7){
+            primo[posicao] = i;
+        }
+        else if(num % 2 == 0 || num % 3 == 0 || num % 5 == 0 || num % 7 == 0){
+            continue
+        }
+        else{
+            primo[posicao] = i;
+        }
+            posicao++
+    }
+     
+        if(num < 2){
+            document.getElementById("resultado").innerHTML = "Informe um número maior que 1";
+        }
+        else{
+            document.getElementById("resultado").innerHTML = primo;
+        }
+}//Fim do método
+     
+//13. Faça um programa que peça ao usuário um número e imprima se é um número perfeito 
+//(a soma de seus divisores, excluindo ele mesmo, é igual ao próprio número)
+
+function numPerfeito(){
+    var num;
+     var divisores = 0;
+     
+    num = parseInt(document.getElementById("textNum").value)
+     
+    for(i = 0; i < num; i++){
+        if(num % i == 0){
+        divisores += i;
+        }
+    }
+     
+     if(divisores == num){
+        document.getElementById("resultado").innerHTML = "Número Perfeito"
+    }
+    else{
+        document.getElementById("resultado").innerHTML = "Não é um número perfeito"
+    }
+    
+}//fim do metodo
 

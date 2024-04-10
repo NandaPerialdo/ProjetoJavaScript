@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="../javascript/funcoes.js"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS/estilo.css">
     <title>Página Inicial</title>
 </head>
 <body>
@@ -29,8 +30,26 @@
         <button type="submit" onclick="contarDez()"> Contar até Dez</button>
         <button type="submit" onclick="contarPares()"> Contar os Pares até Vinte</button>
         <button type="submit" onclick="somarCem()"> Somar de 1 até 100</button>
+        <button type="submit" onclick="multiCinco()"> Imprimir Multiplos de 5 contanto de 1 até 50</button>
+        <button type="submit" onclick="primos()"> Imprimir Números Primos de 1 a 20</button>
 
 
+
+        <h4>Insira 1 número:</h4>
+
+        <form>
+            <label name="num">Número: </label>
+            <input type="number" name="textNum" id="textNum"><br><br>
+        </form>
+
+        <button type="submit" onclick="contar()"> Contar</button>
+        <button type="submit" onclick="somar()"> Somar</button>
+        <button type="submit" onclick="verifPrimo()"> É um número primo?</button>
+        <button type="submit" onclick="fatorial()"> Calcular Fatorial</button>
+        <button type="submit" onclick="fibonacci()"> Fibonacci</button>
+        <button type="submit" onclick="parImpar()"> Pares e Ímpares</button>
+        <button type="submit" onclick="mostrarPrimos()"> Mostrar os Primos</button>
+        <button type="submit" onclick="numPerfeito()"> É um número perfeito?</button>
 
         <h4>Bhaskara</h4>
 
@@ -49,6 +68,6 @@
 
         <textArea id="resultado" rows="30" cols="40" readonly></textArea> 
     
-        
+       
 </body>
 </html>
